@@ -1,0 +1,72 @@
+
+
+:root{
+    --colorOne: #03045e;
+    --colorTwo: #023e8a;
+    --colorThree: #0077b6;
+    --colorFour: #0096c7;
+    --colorFive: #00b4d8;
+    ---colorSix: #48cae4;
+    --colorSeven: #90e0ef;
+    --colorEight: #ade8f4;
+    --colorNine: #caf0f8;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
+  .gallery {
+      width: 500px;
+      height: 400px;
+      padding: 0.1rem;
+      animation: colorChange 2s infinite;
+    background-color: var(--colorOne);
+    box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 5px 0px, rgba(255, 255, 255, 0.6) 0px 0px 1px 0px;
+      
+  }
+
+  @keyframes colorChange {
+      0% {
+          background-color: var(--colorOne);
+      }
+
+      16.666% {
+          background-color: var(--colorTwo);
+      }
+
+      33.333% {
+          background-color: var(--colorThree);
+      }
+
+      50% {
+          background-color: var(--colorFour);
+      }
+
+      66.666% {
+          background-color: var(--colorFive);
+      }
+
+      83.333% {
+          background-color: var(--colorSix);
+      }
+
+      100% {
+          background-color: var(--colorSeven);
+      }
+  }
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
