@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+
+ <style>
+    div {
+        border: 2px solid red;
+        text-align: center;
+        background: linear-gradient(to right, red 0%, blue 50%, green 100%);
+        /* background-size: 200% 100%; */
+        padding: 0 2rem;
+        animation: colorChange 3s linear infinite;
+         position: relative;
+    }
+
+    @keyframes colorChange {
+        0% {
+            background-position: 0% 0%;
+        }
+
+        100% {
+            background-position: 100% 0%;
+        }
+    }
+
+    h3 {
+        background-color: white;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-evenly;
+       
+    }
+    .format{
+        position: absolute;
+        bottom: 30px;
+        right: 50px;
+    }
+</style>
+
+</head>
+<body>
+
+
+
+
+<section>
+    <div>
+        <h3><span id="hr"></span> <span id="min"></span> <span id="sec"></span></h3>
+        <span class="format"></span>
+    </div>
+</section>
+
+
+
+   <script>
+    // 1. Create a function that will display the current time.
+    function time() {
+        const hr = document.getElementById('hr');
+        const sec = document.getElementById('sec');
+        const min = document.getElementById('min');
+
+        const date = new Date();
+        let hrs = date.getHours();
+        const mins = date.getMinutes();
+        const secs = date.getSeconds();
+
+       
+        let amPm = 'AM';
+        if (hrs >= 12) {
+            amPm = 'PM';
+        }
+        if (hrs > 12) {
+            hrs -= 12;
+        }
+
+       
+        const formattedMins = String(mins).padStart(2, '0');
+        const formattedSecs = String(secs).padStart(2, '0');
+
+        const format = document.querySelector('.format');
+       
+        hr.innerText = `${hrs}`;
+        min.innerText = formattedMins;
+        sec.innerText = formattedSecs;
+        format.innerText = ` ${amPm}`;
+    }
+
+    setInterval(time, 1000);
+</script>
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
