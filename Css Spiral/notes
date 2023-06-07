@@ -1,245 +1,211 @@
+/* *,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+} */
+
+/* *:before,
+*:after {
+  content: "";
+} */
 
 
 body {
-  position: relative;
+  /* height: 100%; */
+}
+
+body {
+  /* position: relative; */
   background: #000;
+  overflow: hidden;
+}
+.container  {
+  border: 2px solid green;
 }
 
 .container,
 .container *,
 .container *:before,
 .container *:after {
-  position: absolute;
-  top: 10%;
-  right: 0%;
-  bottom: 0;
-  left: 0;
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
   margin: auto;
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
-.container {
-  height: 70%;
-  width: 100%;
-}
-
 .circle {
-  width: 7em;
-  height: 25em;
+  width: 5em;
+  height: 15em;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid red;
 }
-
 .circle:nth-child(1) {
   animation: spiral 2s -0.02s linear infinite;
 }
 .circle:nth-child(2) {
   animation: spiral 2s -0.04s linear infinite;
 }
-
 .circle:nth-child(3) {
   animation: spiral 2s -0.06s linear infinite;
 }
-
 .circle:nth-child(4) {
   animation: spiral 2s -0.08s linear infinite;
 }
-
 .circle:nth-child(5) {
   animation: spiral 2s -0.1s linear infinite;
 }
-
 .circle:nth-child(6) {
   animation: spiral 2s -0.12s linear infinite;
 }
-
 .circle:nth-child(7) {
   animation: spiral 2s -0.14s linear infinite;
 }
-
 .circle:nth-child(8) {
   animation: spiral 2s -0.16s linear infinite;
 }
-
 .circle:nth-child(9) {
   animation: spiral 2s -0.18s linear infinite;
 }
-
 .circle:nth-child(10) {
   animation: spiral 2s -0.2s linear infinite;
 }
-
 .circle:nth-child(11) {
   animation: spiral 2s -0.22s linear infinite;
 }
-
 .circle:nth-child(12) {
   animation: spiral 2s -0.24s linear infinite;
 }
-
 .circle:nth-child(13) {
   animation: spiral 2s -0.26s linear infinite;
 }
-
 .circle:nth-child(14) {
   animation: spiral 2s -0.28s linear infinite;
 }
-
 .circle:nth-child(15) {
   animation: spiral 2s -0.3s linear infinite;
 }
-
 .circle:nth-child(16) {
   animation: spiral 2s -0.32s linear infinite;
 }
-
 .circle:nth-child(17) {
   animation: spiral 2s -0.34s linear infinite;
 }
-
 .circle:nth-child(18) {
   animation: spiral 2s -0.36s linear infinite;
 }
-
 .circle:nth-child(19) {
   animation: spiral 2s -0.38s linear infinite;
 }
-
 .circle:nth-child(20) {
   animation: spiral 2s -0.4s linear infinite;
 }
-
 .circle:nth-child(21) {
   animation: spiral 2s -0.42s linear infinite;
 }
-
 .circle:nth-child(22) {
   animation: spiral 2s -0.44s linear infinite;
 }
-
 .circle:nth-child(23) {
   animation: spiral 2s -0.46s linear infinite;
 }
-
 .circle:nth-child(24) {
   animation: spiral 2s -0.48s linear infinite;
 }
-
 .circle:nth-child(25) {
   animation: spiral 2s -0.5s linear infinite;
 }
-
 .circle:nth-child(26) {
   animation: spiral 2s -0.52s linear infinite;
 }
-
 .circle:nth-child(27) {
   animation: spiral 2s -0.54s linear infinite;
 }
-
 .circle:nth-child(28) {
   animation: spiral 2s -0.56s linear infinite;
 }
-
 .circle:nth-child(29) {
   animation: spiral 2s -0.58s linear infinite;
 }
-
 .circle:nth-child(30) {
   animation: spiral 2s -0.6s linear infinite;
 }
-
 .circle:nth-child(31) {
   animation: spiral 2s -0.62s linear infinite;
 }
-
 .circle:nth-child(32) {
   animation: spiral 2s -0.64s linear infinite;
 }
-
 .circle:nth-child(33) {
   animation: spiral 2s -0.66s linear infinite;
 }
-
 .circle:nth-child(34) {
   animation: spiral 2s -0.68s linear infinite;
 }
-
 .circle:nth-child(35) {
   animation: spiral 2s -0.7s linear infinite;
 }
-
 .circle:nth-child(36) {
   animation: spiral 2s -0.72s linear infinite;
 }
-
 .circle:nth-child(37) {
   animation: spiral 2s -0.74s linear infinite;
 }
-
 .circle:nth-child(38) {
   animation: spiral 2s -0.76s linear infinite;
 }
-
 .circle:nth-child(39) {
   animation: spiral 2s -0.78s linear infinite;
 }
-
 .circle:nth-child(40) {
   animation: spiral 2s -0.8s linear infinite;
 }
-
 .circle:nth-child(41) {
   animation: spiral 2s -0.82s linear infinite;
 }
-
 .circle:nth-child(42) {
   animation: spiral 2s -0.84s linear infinite;
 }
-
 .circle:nth-child(43) {
   animation: spiral 2s -0.86s linear infinite;
 }
-
 .circle:nth-child(44) {
   animation: spiral 2s -0.88s linear infinite;
 }
-
 .circle:nth-child(45) {
   animation: spiral 2s -0.9s linear infinite;
 }
-
 .circle:nth-child(46) {
   animation: spiral 2s -0.92s linear infinite;
 }
-
 .circle:nth-child(47) {
   animation: spiral 2s -0.94s linear infinite;
 }
-
 .circle:nth-child(48) {
   animation: spiral 2s -0.96s linear infinite;
 }
-
 .circle:nth-child(49) {
   animation: spiral 2s -0.98s linear infinite;
 }
-
 .circle:nth-child(50) {
   animation: spiral 2s -1s linear infinite;
 }
-
-
 .circle:before {
   bottom: auto;
   margin-top: -0.25em;
-  width: 0.7em;
-  height: 0.7em;
-  background: white;
+  width: 0.5em;
+  height: 0.5em;
+  /* background: red; */
 }
 
 @-moz-keyframes spiral {
@@ -247,25 +213,21 @@ body {
     -moz-transform: rotateZ(0turn) scale(1);
     transform: rotateZ(0turn) scale(1);
   }
-
   100% {
     -moz-transform: rotateZ(3turn) scale(0);
     transform: rotateZ(3turn) scale(0);
   }
 }
-
 @-webkit-keyframes spiral {
   0% {
     -webkit-transform: rotateZ(0turn) scale(1);
     transform: rotateZ(0turn) scale(1);
   }
-
   100% {
     -webkit-transform: rotateZ(3turn) scale(0);
     transform: rotateZ(3turn) scale(0);
   }
 }
-
 @keyframes spiral {
   0% {
     -moz-transform: rotateZ(0turn) scale(1);
@@ -273,7 +235,6 @@ body {
     -webkit-transform: rotateZ(0turn) scale(1);
     transform: rotateZ(0turn) scale(1);
   }
-
   100% {
     -moz-transform: rotateZ(3turn) scale(0);
     -ms-transform: rotateZ(3turn) scale(0);
@@ -285,45 +246,45 @@ body {
 
 
 
+
+
+
+
 .button-set {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 10px 20px;
-  /* border: 2px solid red; */
-}
-
-.button {
-  width: 100px;
-  height: 40px;
-  margin: 0 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.5) 0px 2px 5px -1px, rgba(255, 255, 255, 0.3) 0px 1px 3px -1px;
-}
-
-
-.button[data-color='#a3b18a'] {
-  background-color: #a3b18a;
-}
-
-.button[data-color='#00ff00'] {
-  background-color: #00ff00;
-}
-
-.button[data-color='#a2d2ff'] {
-  background-color: #a2d2ff;
-}
-
-.button[data-color='#ffff00'] {
-  background-color: #ffff00;
-}
-
-.button[data-color='#ff00ff'] {
-  background-color: #ff00ff;
-}
-
-.button[data-color='#00ffff'] {
-  background-color: #00ffff;
-}
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    /* border: 2px solid red; */
+  }
+  
+  .button {
+    width: 100px;
+    height: 40px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button[data-color='#ff0000'] {
+    background-color: #ff0000;
+  }
+  
+  .button[data-color='#00ff00'] {
+    background-color: #00ff00;
+  }
+  
+  .button[data-color='#0000ff'] {
+    background-color: #0000ff;
+  }
+  
+  .button[data-color='#ffff00'] {
+    background-color: #ffff00;
+  }
+  
+  .button[data-color='#ff00ff'] {
+    background-color: #ff00ff;
+  }
+  
+  .button[data-color='#00ffff'] {
+    background-color: #00ffff;
+  }

@@ -9,137 +9,53 @@
 
 <body>
 
-    <!-- <div class='container'>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-        <div class='circle'></div>
-      </div> -->
-
-      <div class='container'>
-        <div class='circle' id='circle1'></div>
-        <div class='circle' id='circle2'></div>
-        <div class='circle' id='circle3'></div>
-        <div class='circle' id='circle4'></div>
-        <div class='circle' id='circle5'></div>
-        <div class='circle' id='circle6'></div>
-        <div class='circle' id='circle7'></div>
-        <div class='circle' id='circle8'></div>
-        <div class='circle' id='circle9'></div>
-        <div class='circle' id='circle10'></div>
-        <div class='circle' id='circle11'></div>
-        <div class='circle' id='circle12'></div>
-        <div class='circle' id='circle13'></div>
-        <div class='circle' id='circle14'></div>
-        <div class='circle' id='circle15'></div>
-        <div class='circle' id='circle16'></div>
-        <div class='circle' id='circle17'></div>
-        <div class='circle' id='circle18'></div>
-        <div class='circle' id='circle19'></div>
-        <div class='circle' id='circle20'></div>
-        <div class='circle' id='circle21'></div>
-        <div class='circle' id='circle22'></div>
-        <div class='circle' id='circle23'></div>
-        <div class='circle' id='circle24'></div>
-        <div class='circle' id='circle25'></div>
-        <div class='circle' id='circle26'></div>
-        <div class='circle' id='circle27'></div>
-        <div class='circle' id='circle28'></div>
-        <div class='circle' id='circle29'></div>
-        <div class='circle' id='circle30'></div>
-        <div class='circle' id='circle31'></div>
-        <div class='circle' id='circle32'></div>
-        <div class='circle' id='circle33'></div>
-        <div class='circle' id='circle34'></div>
-        <div class='circle' id='circle35'></div>
-        <div class='circle' id='circle36'></div>
-        <div class='circle' id='circle37'></div>
-        <div class='circle' id='circle38'></div>
-        <div class='circle' id='circle39'></div>
-        <div class='circle' id='circle40'></div>
-        <div class='circle' id='circle41'></div>
-        <div class='circle' id='circle42'></div>
-        <div class='circle' id='circle43'></div>
-        <div class='circle' id='circle44'></div>
-        <div class='circle' id='circle45'></div>
-        <div class='circle' id='circle46'></div>
-        <div class='circle' id='circle47'></div>
-        <div class='circle' id='circle48'></div>
-        <div class='circle' id='circle49'></div>
-        <div class='circle' id='circle50'></div>
-      </div>
+     
       
 
       <div class='button-set'>
-        <button class='button' data-color='#ff0000'></button>
-        <button class='button' data-color='#00ff00'></button>
-        <button class='button' data-color='#0000ff'></button>
-        <button class='button' data-color='#ffff00'></button>
-        <button class='button' data-color='#ff00ff'></button>
-        <button class='button' data-color='#00ffff'></button>
-      </div>
+  <button class='button' data-color='#a3b18a'></button>
+  <button class='button' data-color='#00ff00'></button>
+  <button class='button' data-color='#a2d2ff'></button>
+  <button class='button' data-color='#ffff00'></button>
+  <button class='button' data-color='#ff00ff'></button>
+  <button class='button' data-color='#00ffff'></button>
+</div>
 
 
 
-      <script>
-        const circles = document.querySelectorAll('.circle');
+
+<script>
+
+  const container = document.createElement('div');
+  container.className = 'container';
+
+for (let i = 1; i <= 50; i++) {
+  const circle = document.createElement('div');
+  circle.className = 'circle';
+  circle.id = 'circle' + i;
+  container.appendChild(circle);
+}
+
+
+document.body.appendChild(container);
+
+
+
 const buttons = document.querySelectorAll('.button');
+buttons.forEach(button => {
+  button.addEventListener('click', function() {
+    const color = this.getAttribute('data-color');
+    console.log("Button color:", color);
 
-buttons.forEach((button, index) => {
-  button.addEventListener('click', () => {
-    const color = button.dataset.color;
-    circles[index].style.backgroundColor = color;
-    console.log("he")
+    const circles = document.querySelectorAll('.circle');
+    circles.forEach(circle => {
+      circle.style.borderColor = color;
+    });
   });
 });
 
-      </script>
+</script>
+
     
 </body>
 </html>
