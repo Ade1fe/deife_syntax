@@ -20,7 +20,7 @@ body {
 
 body {
   position: relative;
-  background: #272727;
+  background: #000;
   overflow: hidden;
 }
 
@@ -199,8 +199,8 @@ body {
 .circle:before {
   bottom: auto;
   margin-top: -0.25em;
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.7em;
+  height: 0.7em;
   background: deeppink;
 }
 
@@ -238,3 +238,49 @@ body {
     transform: rotateZ(3turn) scale(0);
   }
 }
+
+
+
+
+
+
+
+
+.button-set {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button {
+    width: 100px;
+    height: 40px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Add specific colors to the buttons */
+  .button[data-color='#ff0000'] {
+    background-color: #ff0000;
+  }
+  
+  .button[data-color='#00ff00'] {
+    background-color: #00ff00;
+  }
+  
+  .button[data-color='#0000ff'] {
+    background-color: #0000ff;
+  }
+  
+  .button[data-color='#ffff00'] {
+    background-color: #ffff00;
+  }
+  
+  .button[data-color='#ff00ff'] {
+    background-color: #ff00ff;
+  }
+  
+  .button[data-color='#00ffff'] {
+    background-color: #00ffff;
+  }
