@@ -115,7 +115,18 @@ li a::after {
     padding: 20px;
     color: white; /* Adjust the text color as needed */
   }
-  
+  button{
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: var(--neon);
+    border: 1px dashed var(--neon);
+  }
+  button:hover{
+    color: var(--white);
+    cursor: pointer;
+    border: 2px dashed var(--dark-black);
+
+  }
   
   .content-section {
     height: 300px;
@@ -130,6 +141,7 @@ li a::after {
 .myH1 {
     position: relative;
     padding: 1rem;
+    margin-left: 2rem;
 
   }
   
@@ -143,6 +155,24 @@ li a::after {
     background-color: var(--neon);
   }
   
+  .myH2 {
+    position: relative;
+    padding: 1rem;
+    margin-left: 5rem;
+
+  }
+  
+  .myH2::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    width: 70px;
+    height: 3px;
+    background-color: var(--neon);
+  }
+
+
   .tour-packages {
     /* border: 1px solid red; */
    display: grid;
@@ -228,7 +258,7 @@ li a::after {
     /* height: max-content; */
   }
   
-  .bi{
+  .bi-x-circle{
     position: absolute;
     top: 10px;
     right: 20px;
@@ -301,7 +331,43 @@ li a::after {
     }
 }
 
+.f{
+  margin: 2rem 0;
+}
 
+.grid, .flex{
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  /* grid-template-columns: repeat(4, 1fr); */
+  gap: 0 20px;
+}
+.stars{
+  /* border: 2px solid pink; */
+  height: 20px;
+  display: flex;
+  gap: 0 5px;
+  align-items: center;
+}
+.bi-star-fill{
+  color: orange ;
+}
+.grid .con{
+  height: 250px;
+  width: 250px;
+  /* border: 1px solid white; */
+}
+.con img{
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.flex .con{
+  height: 250px;
+  width: 350px;
+  /* border: 1px solid white; */
+}
 
 
 .section{
