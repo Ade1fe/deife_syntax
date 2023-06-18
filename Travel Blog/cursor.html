@@ -52,6 +52,7 @@ button:hover {
   --scale: 1.1;
   --border-scale: 1;
   
+
   /* cursor: zoom-in; */
   /* cursor: pointer; */
   /* cursor: alias; */
@@ -64,12 +65,24 @@ button:hover {
   /* cursor: wait; */
   
 }
+@keyframes cursorAnimation {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(var(--border-scale, 0));
+      }
+    }
+
+    button:hover:before {
+      animation: cursorAnimation 0.3s;
+    }
 
 
     </style>
 </head>
 <body>
-    <button>Click Me!</button>
+    <button>Cursor Css</button>
     
 </body>
 </html>
