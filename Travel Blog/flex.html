@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 80px;
+            height: 80px;
+            background-color: aqua;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+        }
+        .box1{
+            display: flex;
+            gap: 10px;
+            background-color: bisque;
+            border: 2px saddlebrown solid;
+            padding: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            }
+            .box2{
+            display: flex;
+            gap: 10px;
+            background-color: bisque;
+            border: 2px saddlebrown solid;
+            padding: 1rem;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            }
+            .box3{
+            display: flex;
+            gap: 10px;
+            background-color: bisque;
+            border: 2px saddlebrown solid;
+            padding: 1rem;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            align-items: center;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="box1">
+        <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+    <div class="box">F</div>
+    </div>
+
+    <div class="box2">
+        <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+    <div class="box">F</div>
+    </div>
+
+    <div class="box3">
+        <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+    <div class="box">F</div>
+    </div>
+    
+</body>
+</html>
