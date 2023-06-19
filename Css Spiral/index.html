@@ -1,61 +1,61 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css Spiral</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-     
-      
-
-      <div class='button-set'>
-  <button class='button' data-color='#a3b18a'></button>
-  <button class='button' data-color='#00ff00'></button>
-  <button class='button' data-color='#a2d2ff'></button>
-  <button class='button' data-color='#ffff00'></button>
-  <button class='button' data-color='#ff00ff'></button>
-  <button class='button' data-color='#00ffff'></button>
-</div>
 
 
 
-
-<script>
-
-  const container = document.createElement('div');
-  container.className = 'container';
-
-for (let i = 1; i <= 50; i++) {
-  const circle = document.createElement('div');
-  circle.className = 'circle';
-  circle.id = 'circle' + i;
-  container.appendChild(circle);
-}
-
-
-document.body.appendChild(container);
+    <div class='button-set'>
+        <button class='button' data-color='#a3b18a'></button>
+        <button class='button' data-color='#00ff00'></button>
+        <button class='button' data-color='#a2d2ff'></button>
+        <button class='button' data-color='#ffff00'></button>
+        <button class='button' data-color='#ff00ff'></button>
+        <button class='button' data-color='#00ffff'></button>
+    </div>
 
 
 
-const buttons = document.querySelectorAll('.button');
-buttons.forEach(button => {
-  button.addEventListener('click', function() {
-    const color = this.getAttribute('data-color');
-    console.log("Button color:", color);
 
-    const circles = document.querySelectorAll('.circle');
-    circles.forEach(circle => {
-      circle.style.borderColor = color;
-    });
-  });
-});
+    <script>
+        const container = document.createElement('div');
+        container.className = 'container';
 
-</script>
+        for (let i = 1; i <= 50; i++) {
+            const circle = document.createElement('div');
+            circle.className = 'circle';
+            circle.id = 'circle' + i;
+            container.appendChild(circle);
+        }
 
-    
+
+        document.body.appendChild(container);
+
+
+
+        const buttons = document.querySelectorAll('.button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const color = this.getAttribute('data-color');
+                console.log("Button color:", color);
+
+                const circles = document.querySelectorAll('.circle');
+                circles.forEach(circle => {
+                    circle.style.borderColor = color;
+                });
+            });
+        });
+    </script>
+
+
 </body>
+
 </html>
