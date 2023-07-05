@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Quote Generator</title>
+    <style>
+        body{
+            background-color: #4895EF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+
+        }
+        h1{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 100px;
+           
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           
+        }
+        .bg {
+            background-color: lightgray;
+            padding: 20px;
+            margin: auto;
+            margin-bottom: 20px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            background-color: #fff;
+            width: 90%;
+        }
+        #quote {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            word-spacing: 5px;
+        }
+        #next {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #4895EF;
+            border: 2px solid #4895EF;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            cursor: pointer;
+            width: 100px;
+            margin-left: auto;
+            color: #fff;
+            transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+           
+        }
+        #next:hover{
+            background-color: transparent;
+            color: black;
+            font-weight: bold;
+        }
+        .icons{
+            margin: 20px 0;
+            text-align: left;
+            padding: 0 2rem;
+            display: flex;
+           gap: 10px;
+        }
+         i{
+            padding: 7px 10px;
+            font-size: 18px;
+            border: 2px solid #4895EF;
+            border-radius: 50%;
+            color: #4895EF;
+        }
+       
+        p{
+            font-size: 14px;
+        }
+        .title{
+                text-align: right;
+                font-size: 12px;
+                padding: 0 2rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="bg">
+            <h1>Quote of the Day</h1>
+            <p id="quote"></p>
+            <p class="title">Deife_syntax</p>
+            <hr>
+            <div class="icons">
+                <i class="bi bi-tiktok"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-youtube"></i>
+                <button id="next">Next</button>
+            </div>
+        </div>
+       
+    </div>
+    <script>
+        var bg = document.querySelector(".bg");
+        var quote = document.querySelector("#quote");
+        var next = document.querySelector("#next");
+
+        var quotes = [
+            'codeNotWorking ? console.log("When my code throws a tantrum, I\'ll put on my coding hat and show it who\'s the boss. We\'ll settle this with some sweet debugging dance moves!") : console.log("Code is in perfect harmony, like a well-orchestrated symphony. Time to sit back, relax, and enjoy the melodious output!");',
+            'if (frustrated && deadlineApproaching) {\n  console.log("Feeling frustrated and the deadline is looming? Take a deep breath, scream \'Release the Kraken!\' and conquer those bugs like a coding warrior!");\n} else {\n  console.log("No need to stress! Keep coding with a smile, and remember that every line of code brings you closer to success!");\n}',
+            '!weary ? console.log("When you\'re weary, tap into your inner resilience and keep moving forward. Energy drinks might help too!") : console.log("Let your determination overcome weariness, and success will be within reach. Dance it out!");',
+            '!doubtful ? console.log("When doubt creeps in, remember that belief in yourself is the key to achieving greatness. You\'re a rockstar!") : console.log("Banish doubt from your mind and embrace the unwavering belief in your abilities. You\'ve got magic within!");',
+            'outOfIdeas ? console.log("When I run out of ideas, I\'ll seek inspiration from the coding cosmos, where creativity knows no bounds. The solution awaits, like a hidden treasure!") : console.log("Overflowing with ideas! Each line of code becomes a brushstroke on the canvas of creation. Let the masterpiece unfold!");',
+            'if (endlessLoop) {\n  console.log("Caught in an endless loop? Break free like a rebellious coder and find the sweet release of a bug-free loop!");\n} else {\n  console.log("No infinite loops here! Smooth sailing as we navigate through code like a ship on a calm sea.");\n}',
+            'syntaxError ? console.log("Oh no, a syntax error has invaded! Time to don the coding armor and wield the mighty compiler to vanquish this foe, for syntax perfection shall prevail!") : console.log("No syntax errors detected! Code is as pristine as a freshly polished diamond, radiating brilliance and elegance!");',
+        ];
+
+        var index = 0;
+
+        next.addEventListener("click", function() {
+            quote.textContent = (quotes[index]);
+            index = (index + 1) % quotes.length;
+        });
+    </script>
+</body>
+</html>
