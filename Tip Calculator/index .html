@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .calculator {
+            width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type="text"]:focus{
+    outline: #103783 2px solid;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #103783;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #103783;
+}
+
+button:active {
+  background-color: #7091d2;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="form-group">
+          <label for="bill">Bill</label>
+          <input type="text" id="bill">
+        </div>
+        <div class="form-group">
+          <label for="tip-percentage">Tip Percentage</label>
+          <input type="text" id="tip-percentage">
+        </div>
+        <div class="form-group">
+          <label for="no-of-persons">No of Persons</label>
+          <input type="text" id="no-of-persons">
+        </div>
+        <div class="form-group">
+          <label for="total">Total</label>
+          <input type="text" id="total" disabled>
+        </div>
+        <button id="calculate-btn">Calculate</button>
+      </div>
+      
+
+
+      <script>
+       
+const billInput = document.getElementById('bill');
+const tipInput = document.getElementById('tip-percentage');
+const personsInput = document.getElementById('no-of-persons');
+const totalInput = document.getElementById('total');
+const calculateBtn = document.getElementById('calculate-btn');
+
+
+calculateBtn.addEventListener('click', () => {
+
+  const bill = parseFloat(billInput.value);
+  const tipPercentage = parseFloat(tipInput.value);
+  const persons = parseInt(personsInput.value);
+
+ 
+  const tipAmount = bill * (tipPercentage / 100);
+  const totalPerPerson = (bill + tipAmount) / persons;
+
+  
+  totalInput.value = totalPerPerson.toFixed(2);
+});
+
+      </script>
+
+    
+</body>
+</html>
