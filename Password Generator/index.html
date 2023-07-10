@@ -2,31 +2,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <title>Password Generator</title>
 
     <style>
-
-
-
+      body{
+        margin: 0;
+        padding: 0;
+      }
          .slider {
-      width: 300px;
+      width: 100%;
     }
 
     .slider input[type="range"] {
       -webkit-appearance: none;
       width: 100%;
       height: 10px;
-      background-color: #ddd;
+      background-color: #fff;
       outline: none;
       border-radius: 5px;
     }
+   
 
     .slider input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
       width: 20px;
       height: 20px;
-      background-color: #4CAF50;
+      background-color: #0c0d30;
+
+      border: #03045e 2px solid;
       cursor: pointer;
       border-radius: 50%;
     }
@@ -35,55 +40,158 @@
       margin-top: 10px;
       font-weight: bold;
     }
+    .container{
+        background-color: #03045e;
+       
+        padding: 2rem 0;
+      }
+
+      button{
+        background-color: #0c0d30;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        
+      }
+
+
+      .group {
+  background-color: #2e2f69;
+  margin: 10px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+
+    .group:first-child{
+      position: relative;
+      margin-top: 0;
+      
+    }
+
+      .group input[type="text"] {
+        padding: 10px 20px;
+        width: 100%;
+        
+      }
+      .group input[type="text"]:focus{
+        outline: #5354ab;
+      }
+
+      .group i{
+       position: absolute;
+       top: 40%;
+       right: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        color: #03045e;
+      }
+      .group:nth-child(2){
+        display: block;
+      }
+
     </style>
 </head>
 <body>
-    <div class="">
-        <div class="">
-            <input type="text">
-        </div>
-
-      <div class="">
-        <div class="slider-value" id="sliderValue"></div>
+   
+    <div class="container">
+      <div class="group">
+        <input type="text" id="password">
+        <i class="ri-file-copy-line" id="copy" onclick="copyField()"></i>
+      </div>
+    
+      <div class="group">
+        <div class="slider-value" id="sliderValue">Length: 14</div>
         <div class="slider">
           <input type="range" id="slider" name="slider" min="7" max="20" oninput="updateSliderValue(this.value)">
         </div>
-        
       </div>
+      
     
-        <div class="group">
-            <label for="">Password length:</label>
-    <input type="checkbox" id="checkbox" name="checkbox">
-        </div>
-        <div class="group">
-            <label for="">Include Uppercase:</label>
-    <input type="checkbox" id="checkbox" name="checkbox">
-        </div>
-        <div class="group">
-            <label for="">Include Lowercase:</label>
-    <input type="checkbox" id="checkbox" name="checkbox">
-        </div>
-        <div class="group">
-            <label for="">Include Numbers:</label>
-    <input type="checkbox" id="checkbox" name="checkbox">
-        </div>
-
-        <div class="group">
-            <label for="">Include Symbols:</label>
-    <input type="checkbox" id="checkbox" name="checkbox">
-        </div>
-
-        <button>Generate Password</button>
-
-
+      <div class="group">
+        <label for="uppercaseCheckbox">Include Uppercase:</label>
+        <input type="checkbox" id="uppercaseCheckbox" for="uppercaseCheckbox"  name="checkbox">
+      </div>
+      <div class="group">
+        <label for="lowercaseCheckbox">Include Lowercase:</label>
+        <input type="checkbox" id="lowercaseCheckbox" name="checkbox">
+      </div>
+      <div class="group">
+        <label for="numbersCheckbox">Include Numbers:</label>
+        <input type="checkbox" id="numbersCheckbox" name="checkbox">
+      </div>
+      <div class="group">
+        <label for="symbolsCheckbox">Include Symbols:</label>
+        <input type="checkbox" id="symbolsCheckbox" name="checkbox">
+      </div>
+     
+    
+      <button onclick="generatePassword()">Generate Password</button>
     </div>
+    
+    
 
 
     
     <script>
-        function updateSliderValue(value) {
-      document.getElementById('sliderValue').innerText = value;
-    }
+   function updateSliderValue(value) {
+  document.getElementById("sliderValue").textContent = "Length: " + value;
+}
+
+function generatePassword() {
+  var length = document.getElementById("slider").value;
+  var includeUppercase = document.getElementById("uppercaseCheckbox").checked;
+  var includeLowercase = document.getElementById("lowercaseCheckbox").checked;
+  var includeNumbers = document.getElementById("numbersCheckbox").checked;
+  var includeSymbols = document.getElementById("symbolsCheckbox").checked;
+
+  var charset = "";
+  if (includeUppercase) {
+    charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+  if (includeLowercase) {
+    charset += "abcdefghijklmnopqrstuvwxyz";
+  }
+  if (includeNumbers) {
+    charset += "0123456789";
+  }
+  if (includeSymbols) {
+    charset += "!@#$%^&*()_-+=[]{}|:;<>,.?/";
+  }
+
+  if (charset === "") {
+    alert("Please select at least one checkbox.");
+    return;
+  }
+
+  var password = "";
+  for (var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset.charAt(randomIndex);
+  }
+
+  document.getElementById("password").value = password;
+}
+
+function copyField() {
+  var copyButton = document.getElementById("copy");
+  copyButton.addEventListener("click", () => {
+    var passwordField = document.getElementById("password");
+    passwordField.select();
+    passwordField.setSelectionRange(0, 99999);
+
+    document.execCommand("copy");
+
+    alert("Password copied to clipboard!");
+  });
+}
+
+
         </script>
 
 
