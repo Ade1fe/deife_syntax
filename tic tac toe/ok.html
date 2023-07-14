@@ -1,0 +1,248 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="/styles.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Tic Tac Toe</title>
+
+  <style>
+/* Reset default margin and padding for the body */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #875aef;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Container for the game board and score container */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container for the game board */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  z-index: 0;
+}
+
+/* Game board grid */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+/* Individual cell in the game board */
+.cell {
+  width: 140px;
+  height: 140px;
+  background-color: #7955cf;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4px;
+  cursor: pointer;
+}
+
+/* Hover style for cells */
+.cell:hover {
+  background-color: #967db7;
+}
+
+/* Container for the score and additional elements */
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  padding: 10px;
+  margin-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  z-index: 3;
+}
+
+/* Score display */
+.score {
+  font-size: 24px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.score h1 {
+  margin: 0;
+}
+
+/* Level display */
+.level {
+  padding: 5px;
+  margin: 0;
+}
+
+/* Scores container */
+.scores {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+/* Individual score display */
+#x-score h1 {
+  color: #4CAF50;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-right: 10px;
+}
+
+/* Modal dialog for winner message */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+  color: #7955cf;
+  font-weight: 900;
+}
+
+/* Menu icon */
+.menu-icon {
+  position: relative;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .container {
+    order: 1;
+  }
+
+  .score-container {
+    width: 100%;
+    display: block;
+    color: #000;
+    height: 100%;
+    padding: 1rem;
+    transform: translateX(-100%);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 20px;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 3;
+    height: fit-content;
+  }
+
+  .show-navbar {
+    transform: translateX(0%);
+  }
+
+  /* Adjust the font size for smaller screens */
+  .cell {
+    font-size: 24px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  
+  <div class="main-container">
+    <div class="container">
+      <div class="board"></div>
+    </div>
+    
+    <i class="fas fa-bars menu-icon"></i>
+    <div class="score-container" id="navbar">
+     
+     
+      <div class="scores">
+        <div class="score" id="x-score"><h1>X:</h1> 0 </div>
+        <div class="score" id="o-score"><h1>O:</h1> 0</div>
+        <div class="score" id="draw"><h1>Draw:</h1> 0</div>
+      </div>
+      <div>
+        <div class="myCoins">
+          <h3 id="x-coin"> </h3>
+          <h3 id="o-coin"></h3>
+        </div>
+        <p class="level" id="level">Level: 0</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="winner-modal">
+    <div class="modal-content">
+      <h2 id="winner-message"></h2>
+      <button id="close">Close</button>
+    </div>
+  </div>
+
+
+
+  <script src="/app.js"></script>
+
+
+  <script>
+    // Add the JavaScript code for showing/hiding the navbar
+  const menuIcon = document.querySelector(".menu-icon");
+  const navbar = document.getElementById("navbar");
+
+  menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("show-navbar");
+    console.log("mine")
+  });
+  </script>
+  
+</body>
+</html>
