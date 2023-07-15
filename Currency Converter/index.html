@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>Currency Converter</title>
-  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-  <style>
+   <style>
 
 body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: #719772;
 }
 
 h1 {
@@ -36,8 +36,15 @@ label {
   font-weight: bold;
   margin-bottom: 5px;
 }
+input[type="number"]
+ {
+  padding: 8px;
+  width: 96%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 
-input[type="number"],input[type="text"],
+input[type="text"],
 select {
   padding: 8px;
   width: 100%;
@@ -97,7 +104,7 @@ function convertCurrency() {
   var fromCurrency = document.getElementById('fromCurrency').value;
   var toCurrency = document.getElementById('toCurrency').value;
   var result = document.getElementById('result');
-  
+
   // Conversion rates
   var conversionRates = {
     USD: {
@@ -131,20 +138,21 @@ function convertCurrency() {
       NGN: 66.43
     }
   };
-  
-  // Perform conversion
+
   var convertedAmount = amount * conversionRates[fromCurrency][toCurrency];
-  
-  // Display result
-  result.innerHTML = amount + ' ' + fromCurrency + ' = ' + convertedAmount.toFixed(2) + ' ' + toCurrency;
+  result.innerHTML = amount + ' '+ fromCurrency + ' = ' + convertedAmount.toFixed(2) + '' + toCurrency;
+
 }
 
-function clearFields() {
-    document.getElementById('amount').value = '';
-    document.getElementById('fromCurrency').value = 'NGN';
-    document.getElementById('toCurrency').value = 'NGN';
-    document.getElementById('result').innerHTML = '';
-  }
+function clearFields (){
+  document.getElementById('amount').value = '';
+  document.getElementById('fromCurrency').value= 'NGN';
+  document.getElementById('toCurrency').value= 'NGN';
+  document.getElementById('result').innerHTML = '';
+
+
+}
+
   </script>
 </body>
 </html>

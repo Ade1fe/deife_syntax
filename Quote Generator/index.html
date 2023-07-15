@@ -34,10 +34,11 @@
             width: 90%;
         }
         #quote {
-            font-size: 18px;
+            font-size: 13px;
             font-weight: bold;
             margin-bottom: 10px;
             word-spacing: 5px;
+            line-height: 20px;
         }
         #next {
             padding: 10px 20px;
@@ -79,7 +80,7 @@
         }
         .title{
                 text-align: right;
-                font-size: 12px;
+                font-size: 9px;
                 padding: 0 2rem;
         }
     </style>
@@ -102,9 +103,10 @@
        
     </div>
     <script>
-        var bg = document.querySelector(".bg");
+        var bg = document.querySelector("bg");
         var quote = document.querySelector("#quote");
         var next = document.querySelector("#next");
+
 
         var quotes = [
             'codeNotWorking ? console.log("When my code throws a tantrum, I\'ll put on my coding hat and show it who\'s the boss. We\'ll settle this with some sweet debugging dance moves!") : console.log("Code is in perfect harmony, like a well-orchestrated symphony. Time to sit back, relax, and enjoy the melodious output!");',
@@ -118,10 +120,14 @@
 
         var index = 0;
 
-        next.addEventListener("click", function() {
+        next.addEventListener("click", function(){
             quote.textContent = (quotes[index]);
             index = (index + 1) % quotes.length;
         });
+
+
+
+
     </script>
 </body>
 </html>

@@ -65,6 +65,13 @@ button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
+.d-{
+  display: flex;
+}
+
+.d- .form-group{
+  width: 100%;
+}
 
     </style>
 </head>
@@ -83,37 +90,41 @@ button:disabled {
           <label for="no-of-persons">No of Persons</label>
           <input type="text" id="no-of-persons">
         </div>
+       <div class="d-">
         <div class="form-group">
-          <label for="total">Total</label>
+          <label for="total">Total Per Person</label>
           <input type="text" id="total" disabled>
         </div>
+        <div class="form-group">
+          <label for="total">Tip Per Person</label>
+          <input type="text" id="tip" disabled>
+        </div>
+       </div>
         <button id="calculate-btn">Calculate</button>
       </div>
       
 
 
       <script>
-       
-const billInput = document.getElementById('bill');
-const tipInput = document.getElementById('tip-percentage');
-const personsInput = document.getElementById('no-of-persons');
-const totalInput = document.getElementById('total');
-const calculateBtn = document.getElementById('calculate-btn');
+            const billInput = document.getElementById('bill');
+        const tipInput = document.getElementById('tip-percentage');
+        const personsInput = document.getElementById('no-of-persons');
+        const totalInput = document.getElementById('total');
+        const tipInputPerPerson = document.getElementById('tip');
+        const calculateBtn = document.getElementById('calculate-btn');
 
+        calculateBtn.addEventListener('click', () => {
+            const bill = parseFloat(billInput.value);
+            const tipPercentage = parseFloat(tipInput.value);
+            const persons = parseInt(personsInput.value);
 
-calculateBtn.addEventListener('click', () => {
+            const tipAmount = bill * (tipPercentage / 100);
+            const totalPerPerson = (bill + tipAmount) / persons;
+            const tipPerPerson = tipAmount / persons;
 
-  const bill = parseFloat(billInput.value);
-  const tipPercentage = parseFloat(tipInput.value);
-  const persons = parseInt(personsInput.value);
-
- 
-  const tipAmount = bill * (tipPercentage / 100);
-  const totalPerPerson = (bill + tipAmount) / persons;
-
-  
-  totalInput.value = totalPerPerson.toFixed(2);
-});
+            totalInput.value = totalPerPerson.toFixed(2);
+            tipInputPerPerson.value = tipPerPerson.toFixed(2);
+        });
 
       </script>
 
