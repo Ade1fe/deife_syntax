@@ -1,5 +1,6 @@
 body{
-    background-color: #f1f1f1;
+    color: #f1f1f1;
+    background-color: black;
     /* text-align: center; */
 }
 h1{
@@ -17,8 +18,10 @@ input{
     padding: 1.2rem 1rem;
     outline: none;
     border: #b8c0ff 2px solid;
-    background-color: #fff;
+    background-color: #222;
     border: none;
+    color: white;
+    font-size: 18px;
 }
 .container button{
     margin-left: -60px;
@@ -33,6 +36,7 @@ input{
     gap: 20px;
     justify-content: right;
     width: 90%;
+    margin: auto;
     align-items: center;
 }
 .buttons button:first-child{
@@ -63,6 +67,7 @@ input{
 .buttons button:hover{
     background-color: transparent;
     cursor: pointer;
+    color: #f1f1f1;
 }
 ul{
     display: block;
@@ -79,7 +84,7 @@ li, .li, .completed{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0.5rem;
-    background-color: #ddd;
+    background-color: #222;
 }
 .myTodos{
     margin: 2rem 0;
@@ -95,6 +100,10 @@ li, .li, .completed{
 @media screen and (max-width: 768px) {
     .myTodos li span {
       word-break: break-all;
+    }
+    .buttons{
+     
+        justify-content: center;
     }
   }
   

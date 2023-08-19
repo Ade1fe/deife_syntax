@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Messenger App - Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .header {
+      background-color: #337ab7;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .search {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .chat-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .chat-item {
+      background-color: #e9e9e9;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .chat-item:hover {
+      background-color: #dedede;
+      cursor: pointer;
+    }
+
+    .chat-item h3 {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    .chat-item p {
+      color: #888888;
+    }
+
+    .time {
+      font-size: 12px;
+      color: #888888;
+      margin-top: 5px;
+    }
+
+    .you-sent {
+      background-color: #337ab7;
+      color: #ffffff;
+    }
+
+    .you-sent p {
+      margin-bottom: 0;
+    }
+
+    .sender {
+      font-weight: bold;
+    }
+
+    .receiver {
+      color: #888888;
+    }
+
+    .message-input {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .message-input input[type="text"] {
+      flex-grow: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .message-input button {
+      padding: 10px 20px;
+      background-color: #337ab7;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .message-input button:hover {
+      background-color: #286090;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Messenger App</h1>
+  </div>
+  <div class="container">
+    <div class="search">
+      <input type="text" placeholder="Search Messenger">
+    </div>
+    <ul class="chat-list">
+      <li class="chat-item">
+        <h3>Jeremiah Ajiamah</h3>
+        <p>Facebook</p>
+        <p>You aren't friends on Facebook</p>
+        <p>1 mutual friend: John Oluwatosin Onasanya</p>
+        <span class="time">13:00</span>
+      </li>
+      <li class="chat-item">
+        <h3>Jeremiah Ajiamah</h3>
+        <p>Sax_eclipse7</p>
+        <p>Write to Jeremiah Ajiamah</p>
+        <span class="time">13:32</span>
+      </li>
+    </ul>
+    <div class="conversation">
+      <div class="chat">
+        <p class="you-sent"><span class="sender">You:</span> Send a dm on Instagram ❤️💕</p>
+        <span class="time">13:32</span>
+      </div>
+      <div class="chat">
+        <p><span class="sender">Jeremiah:</span> Done</p>
+        <span class="time">13:34</span>
+      </div>
+      <div class="chat">
+        <p><span class="sender">Jeremiah:</span> I'm sax_eclipse</p>
+        <span class="time">13:35</span>
+      </div>
+      <div class="chat">
+        <p class="you-sent"><span class="sender">You:</span> Jeremiah Ajiamah</p>
+        <span class="time">13:36</span>
+      </div>
+    </div>
+    <div class="message-input">
+      <input type="text" placeholder="Type your message">
+      <button>Send</button>
+    </div>
+  </div>
+</body>
+</html>
+  
